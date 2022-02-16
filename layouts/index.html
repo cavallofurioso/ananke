@@ -1,5 +1,11 @@
 {{ define "main" }}
- <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+<html>
+ <body>
+  
+  <script type="text/javascript" src="/js/carousel.js"></script>
+  <link  type="text/css" href="/css/carousel.css">  
+
+<article class="cf pv6 ph0 f4 center measure-wide lh-copy {{ $.Param "text_color" | default "dark-gray" }}">
     {{ .Content }}
   </article>
   {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
@@ -11,6 +17,8 @@
   {{ if ge $section_count 1 }}
     {{/* Derive the section name  */}}
     {{ $section_name := index (.Site.Params.mainSections) 0 }}
+
+    
 
     <div class="pa3 pa4-ns w-100 w-70-ns center">
       {{/* Use $section_name to get the section title. Use "with" to only show it if it exists */}}
@@ -26,7 +34,7 @@
         {{/* Range through the first $n_posts items of the section */}}
         {{ range (first $n_posts $section) }}
           <div class="relative w-100 mb4">
-            {{ .Render "summary-with-image" }}
+            {{ partial "summary-with-image.html" . }}
           </div>
         {{ end }}
       </section>
@@ -51,5 +59,10 @@
       {{ end }}
 
       </div>
+
+
+    </body>
+    </html>
   {{ end }}
 {{ end }}
+

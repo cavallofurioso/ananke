@@ -1,6 +1,6 @@
 /* pagination.html: https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L117 */
 .pagination {
-  margin: 3rem 0;
+  margin: 300rem 0;
 }
 
 .pagination li {
@@ -29,3 +29,5 @@
 #TableOfContents ul li {
   margin-bottom: 1em;
 }
+
+

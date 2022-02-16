@@ -1,18 +1,28 @@
 {{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
 {{ define "main" }}
-  <div class="flex-l mt2 mw8 center">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Sofia&display=swap" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet" type="text/css">
+
+<div class="flex-l mt2 mm7 center">
     <article class="center cf pv5 ph3 ph4-ns mw7">
       <header>
-        <p class="f6 b helvetica tracked">
+
+        <p class="f6 b tracked">
           {{ humanize .Section | upper  }}
         </p>
-        <h1 class="f1">
-          {{ .Title }}
+        <h1 class="f3">
+          {{ .Section }}
         </h1>
       </header>
-      <div class="nested-copy-line-height lh-copy f4 nested-links {{ $.Param "text_color" | default "mid-gray" }}">
+      <div class="nested-copy-line-height lh-copy f5 garamond italic nested-links nested-img {{ $.Param "text_color" | default "dark-gray" }}">
         {{ .Content }}
       </div>
     </article>
   </div>
+
+  
 {{ end }}
+  
